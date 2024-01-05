@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Tip Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="wc-tip-calculator.js"></script>
+    <script type="module" src="lit-input-tip-calculator.js"></script>
+  </head>
+  <body>
+    <lit-input-tip-calculator></lit-input-tip-calculator>
+    <tip-calculator></tip-calculator>
     <div class="calculator">
-        <h2>Tip Calculator</h2>
-        <label for="billAmount">Bill Amount:</label>
-        <input type="number" id="billAmount" placeholder="Enter Bill Amount">
+      <h2>Tip Calculator</h2>
+      <h3>Vanilla JavaScript</h3>
+      <label for="billAmount">Bill Amount:</label>
+      <input
+        onchange="calculateTip()"
+        type="number"
+        id="billAmount"
+        placeholder="Enter Bill Amount"
+      />
 
-        <label for="tipPercentage">Tip Percentage:</label>
-        <input type="number" id="tipPercentage" placeholder="Enter Tip Percentage">
+      <label for="tipPercentage">Tip Percentage:</label>
+      <input
+        onchange="calculateTip()"
+        type="number"
+        id="tipPercentage"
+        placeholder="Enter Tip Percentage"
+      />
 
-        <button onclick="calculateTip()">Calculate Tip</button>
+      <button onclick="calculateTip()">Calculate Tip</button>
 
-        <p id="totalTip">Total Tip: $0.00</p>
-        <p id="totalBill">Total Bill: $0.00</p>
+      <p id="totalTip">Total Tip: $0.00</p>
+      <p id="totalBill">Total Bill: $0.00</p>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="vanilla.js"></script>
+  </body>
 </html>
